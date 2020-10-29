@@ -1,0 +1,45 @@
+# oewa - oauth-enabled-web-app
+iam:
+  server: # ex: https://iam.example.com (This iam server issuer url (and port), not the admin url)
+  application-id: # ex: 00000000-0000-0000-0000-000000000000
+  application-secret: # ex: 0000000000000000000000000000000000000000000000000000000000000000
+  # If you are using non-standard port for ssl on your node webserver, please include it below.
+  redirect_uri: # ex: https://oewa.example.com/auth
+  # Place your root certificate between begin and end below
+  rootCertificate: &ca |
+    -----BEGIN CERTIFICATE-----
+    -----END CERTIFICATE-----
+database: # ex: oewa.nsf
+dominoBackendConnection:
+  hostName: # ex: domino.example.com
+  connection:
+    port: # ex: 3003
+    secure: true # default
+  credentials:
+    # replace below if your proton server is signed by a different CA than your IAM server.
+    rootCertificate: *ca
+    # Place your functional ID client certificate between begin and end below
+    clientCertificate: |
+      -----BEGIN CERTIFICATE-----
+      -----END CERTIFICATE-----
+    # Place your functional ID client key (unencrypted) between begin and end below
+    clientKey: |
+      -----BEGIN RSA PRIVATE KEY-----
+      -----END RSA PRIVATE KEY-----
+webFrontend:
+  hostname: # ex: oewa.example.com
+  callbackPath: # ex: /auth
+  listenAddress: "0.0.0.0" # default
+  listenPort: 80 # default
+  listenTLSPort: 443 # default
+  sessionTTL: 86400 # default
+  # replace below if your oewa server is signed by a different CA than your IAM server.
+  rootCertificate: *ca
+  # Place your oewa http server certificate between begin and end below
+  certificate: |
+    -----BEGIN CERTIFICATE-----
+    -----END CERTIFICATE-----
+  # Place your oewa http server key between begin and end below
+  key: |
+    -----BEGIN RSA PRIVATE KEY-----
+    -----END RSA PRIVATE KEY-----

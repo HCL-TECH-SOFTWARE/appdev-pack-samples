@@ -1,0 +1,5 @@
+{
+  "eslint.workingDirectories": [
+    "oauth-enabled-web-app"
+  ]
+}
