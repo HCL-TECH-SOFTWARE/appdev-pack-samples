@@ -29,7 +29,8 @@
    1. Assign your functional id as `Manager` and assign the role you just
       created.
       ![ACL Access Controls Example](acl.png)
-   1. Add in ACL other users as editors (create/delete docs) to use in the app.
+   1. Add the 2 other users in ACL as editors (create/delete docs) so they can
+      use the app.
 1. Create an "Application" in IAM server
    * Fill in the form with values for where your application will be
    * Remember, your node server will need to be running https.
