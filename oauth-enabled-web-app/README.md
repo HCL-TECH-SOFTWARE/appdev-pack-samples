@@ -1,6 +1,7 @@
 ## Running the sample app
 
 ### These steps assume that you have performed the following actions already
+* Installed NodeJS 12 or higher on the machine to run the demo app.
 * Configure your domino server with proton set up with client certificate
   authentication.
 * Set up and configure the IAM service.
