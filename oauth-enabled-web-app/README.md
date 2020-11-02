@@ -1,4 +1,4 @@
-## Runing the sample app
+## Running the sample app
 
 ### These steps assume that you have performed the following actions already
 * Configure your domino server with proton set up with client certificate
@@ -7,7 +7,7 @@
 * Create an ssl server certificate for this sample app to use.
 * Create a functional id for this sample application with a client certificate
   ( normal proton functional id process )
-* Have at least 2 users registererd in domino to log in to the sample app with.
+* Have at least 2 users registered  in domino to log in to the sample app with.
   * Set internet password for these 2 users.
 
 *My functional id for the purposes of this guide is `User 003/DAD`*

@@ -5,7 +5,7 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon --watch . --ext js,cjs,pug,json,yml --unhandled-rejections=strict .",
+    "start": "nodemon --experimental-modules --watch . --ext js,cjs,pug,json,yml --unhandled-rejections=strict .",
     "test": "eslint ."
   },
   "repository": {
