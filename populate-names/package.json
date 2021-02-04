@@ -1,0 +1,29 @@
+{
+  "name": "populate-names",
+  "version": "1.0.0",
+  "description": "Populate a Domino address book with fake names",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "pnames": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:hcl-cwp/populate-names.git"
+  },
+  "contributors": [
+    "Dave Delay <david.delay@hcl.com>",
+    "Dan Dumont <dan.dumont@hcl.com>"
+  ],
+  "license": "Apache-2.0",
+  "dependencies": {
+    "@domino/domino-db": "file:domino-domino-db-1.8.0.tgz",
+    "minimist": "1.2.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.12.1",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-header": "^3.1.0",
+    "eslint-plugin-import": "^2.22.1"
+  }
+}
