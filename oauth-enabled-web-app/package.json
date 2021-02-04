@@ -19,8 +19,8 @@
   },
   "homepage": "https://github.com/HCL-TECH-SOFTWARE/appdev-pack-samples#readme",
   "dependencies": {
-    "@domino/domino-db": "file:domino-domino-db-1.7.0.tgz",
-    "@domino/node-iam-client": "file:domino-node-iam-client-1.6.1.tgz",
+    "@domino/domino-db": "file:domino-domino-db-1.8.0.tgz",
+    "@domino/node-iam-client": "file:domino-node-iam-client-1.7.0.tgz",
     "bluebird": "^3.7.2",
     "body-parser": "^1.19.0",
     "deep-freeze": "0.0.1",
