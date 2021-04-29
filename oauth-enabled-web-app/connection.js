@@ -16,7 +16,11 @@
 import dominodb from '@domino/domino-db';
 import config from './config.js';
 
+// Types
+import Database from '@domino/domino-db/src/database.js'; // eslint-disable-line no-unused-vars, import/order
+
 const { useServer } = dominodb;
+/** @type {Database} */
 let database;
 
 const getServer = async () => useServer(config.get('dominoBackendConnection'));
