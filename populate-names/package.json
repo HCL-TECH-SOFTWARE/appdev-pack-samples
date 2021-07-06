@@ -17,13 +17,13 @@
   ],
   "license": "Apache-2.0",
   "dependencies": {
-    "@domino/domino-db": "file:domino-domino-db-1.8.0.tgz",
+    "@domino/domino-db": "^1.10.0",
     "minimist": "^1.2.5"
   },
   "devDependencies": {
-    "eslint": "^7.12.1",
+    "eslint": "^7.30.0",
     "eslint-config-airbnb-base": "^14.2.0",
     "eslint-plugin-header": "^3.1.0",
-    "eslint-plugin-import": "^2.22.1"
+    "eslint-plugin-import": "^2.23.4"
   }
 }
