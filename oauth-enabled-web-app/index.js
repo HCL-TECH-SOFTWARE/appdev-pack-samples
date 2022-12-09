@@ -21,7 +21,7 @@ import open from 'open';
 import { v4 as uuidv4 } from 'uuid';
 import bodyParser from 'body-parser';
 import config from './config.js';
-import auth from './auth.js';
+import auth, { logout } from './auth.js';
 import { getMessages, sendMessage } from './domino.js';
 
 const { urlencoded } = bodyParser;
@@ -37,6 +37,7 @@ app.use(session({
   },
 }));
 app.use(auth);
+app.get('/logout', logout);
 app.use(urlencoded({ extended: true }));
 app.set('views', './views');
 app.set('view engine', 'pug');

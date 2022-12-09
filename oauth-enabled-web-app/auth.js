@@ -34,6 +34,22 @@ const ldapToDomino = (ldapdn) => {
   return ldapdn.replace(/([^\\]),/g, '$1/').replace(/\\,/, ',');
 };
 
+/** @type {import('express').Handler} */
+export const logout = async (req, res) => {
+  const { session } = req;
+
+  const url = new URL(iam.clientOptions.iam_server);
+  url.pathname = '/session/end';
+  url.search = new URLSearchParams({
+    id_token_hint: session.iamToken.id_token,
+    client_id: iam.clientOptions.client_id,
+    post_logout_redirect_uri: iam.clientOptions.redirect_uri,
+    state: 'logout',
+  }).toString();
+
+  res.redirect(url.toString());
+};
+
 export default async (req, res, next) => {
   const { session } = req;
 
@@ -51,13 +67,13 @@ export default async (req, res, next) => {
         const user = await decode(iamToken.id_token);
         session.user = user;
         user.sub = ldapToDomino(user.sub);
-
+        console.dir(iamToken);
+        console.dir(user);
+        console.dir(await client.introspectAccessToken(iamToken.access_token));
         // this is only our authentication request
         // we need to let the authorization for proton happen
-        if (iamToken.scope !== 'openid') {
-          // for demo only, store this more securely.
-          session.iamToken = iamToken;
-        }
+        // for demo only, store this more securely.
+        session.iamToken = iamToken;
         res.redirect('/');
         return;
       } catch (e) {
